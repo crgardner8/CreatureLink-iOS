@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55B2008B2F91575B00E68399 /* CreatureLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */; };
+		55B2008D2F91575B00E68399 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2008C2F91575B00E68399 /* ContentView.swift */; };
+		55B2008F2F91576000E68399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B2008E2F91576000E68399 /* Assets.xcassets */; };
+		55B200922F91576000E68399 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B200912F91576000E68399 /* Preview Assets.xcassets */; };
+		55B2009C2F91576000E68399 /* CreatureLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2009B2F91576000E68399 /* CreatureLinkTests.swift */; };
+		55B200A62F91576100E68399 /* CreatureLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200A52F91576100E68399 /* CreatureLinkUITests.swift */; };
+		55B200A82F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200A72F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55B200982F91576000E68399 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55B2007F2F91575B00E68399 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55B200862F91575B00E68399;
+			remoteInfo = CreatureLink;
+		};
+		55B200A22F91576100E68399 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55B2007F2F91575B00E68399 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55B200862F91575B00E68399;
+			remoteInfo = CreatureLink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55B200872F91575B00E68399 /* CreatureLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatureLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkApp.swift; sourceTree = "<group>"; };
+		55B2008C2F91575B00E68399 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55B2008E2F91576000E68399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55B200912F91576000E68399 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55B200972F91576000E68399 /* CreatureLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreatureLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B2009B2F91576000E68399 /* CreatureLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkTests.swift; sourceTree = "<group>"; };
+		55B200A12F91576100E68399 /* CreatureLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreatureLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B200A52F91576100E68399 /* CreatureLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkUITests.swift; sourceTree = "<group>"; };
+		55B200A72F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55B200842F91575B00E68399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B200942F91576000E68399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B2009E2F91576100E68399 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55B2007E2F91575B00E68399 = {
+			isa = PBXGroup;
+			children = (
+				55B200892F91575B00E68399 /* CreatureLink */,
+				55B2009A2F91576000E68399 /* CreatureLinkTests */,
+				55B200A42F91576100E68399 /* CreatureLinkUITests */,
+				55B200882F91575B00E68399 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55B200882F91575B00E68399 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55B200872F91575B00E68399 /* CreatureLink.app */,
+				55B200972F91576000E68399 /* CreatureLinkTests.xctest */,
+				55B200A12F91576100E68399 /* CreatureLinkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55B200892F91575B00E68399 /* CreatureLink */ = {
+			isa = PBXGroup;
+			children = (
+				55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */,
+				55B2008C2F91575B00E68399 /* ContentView.swift */,
+				55B2008E2F91576000E68399 /* Assets.xcassets */,
+				55B200902F91576000E68399 /* Preview Content */,
+			);
+			path = CreatureLink;
+			sourceTree = "<group>";
+		};
+		55B200902F91576000E68399 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				55B200912F91576000E68399 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55B2009A2F91576000E68399 /* CreatureLinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				55B2009B2F91576000E68399 /* CreatureLinkTests.swift */,
+			);
+			path = CreatureLinkTests;
+			sourceTree = "<group>";
+		};
+		55B200A42F91576100E68399 /* CreatureLinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55B200A52F91576100E68399 /* CreatureLinkUITests.swift */,
+				55B200A72F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift */,
+			);
+			path = CreatureLinkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55B200862F91575B00E68399 /* CreatureLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B200AB2F91576100E68399 /* Build configuration list for PBXNativeTarget "CreatureLink" */;
+			buildPhases = (
+				55B200832F91575B00E68399 /* Sources */,
+				55B200842F91575B00E68399 /* Frameworks */,
+				55B200852F91575B00E68399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CreatureLink;
+			productName = CreatureLink;
+			productReference = 55B200872F91575B00E68399 /* CreatureLink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55B200962F91576000E68399 /* CreatureLinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B200AE2F91576100E68399 /* Build configuration list for PBXNativeTarget "CreatureLinkTests" */;
+			buildPhases = (
+				55B200932F91576000E68399 /* Sources */,
+				55B200942F91576000E68399 /* Frameworks */,
+				55B200952F91576000E68399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55B200992F91576000E68399 /* PBXTargetDependency */,
+			);
+			name = CreatureLinkTests;
+			productName = CreatureLinkTests;
+			productReference = 55B200972F91576000E68399 /* CreatureLinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55B200A02F91576100E68399 /* CreatureLinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B200B12F91576100E68399 /* Build configuration list for PBXNativeTarget "CreatureLinkUITests" */;
+			buildPhases = (
+				55B2009D2F91576100E68399 /* Sources */,
+				55B2009E2F91576100E68399 /* Frameworks */,
+				55B2009F2F91576100E68399 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55B200A32F91576100E68399 /* PBXTargetDependency */,
+			);
+			name = CreatureLinkUITests;
+			productName = CreatureLinkUITests;
+			productReference = 55B200A12F91576100E68399 /* CreatureLinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55B2007F2F91575B00E68399 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					55B200862F91575B00E68399 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					55B200962F91576000E68399 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 55B200862F91575B00E68399;
+					};
+					55B200A02F91576100E68399 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 55B200862F91575B00E68399;
+					};
+				};
+			};
+			buildConfigurationList = 55B200822F91575B00E68399 /* Build configuration list for PBXProject "CreatureLink" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55B2007E2F91575B00E68399;
+			productRefGroup = 55B200882F91575B00E68399 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55B200862F91575B00E68399 /* CreatureLink */,
+				55B200962F91576000E68399 /* CreatureLinkTests */,
+				55B200A02F91576100E68399 /* CreatureLinkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B200852F91575B00E68399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B200922F91576000E68399 /* Preview Assets.xcassets in Resources */,
+				55B2008F2F91576000E68399 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B200952F91576000E68399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B2009F2F91576100E68399 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55B200832F91575B00E68399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B2008D2F91575B00E68399 /* ContentView.swift in Sources */,
+				55B2008B2F91575B00E68399 /* CreatureLinkApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B200932F91576000E68399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B2009C2F91576000E68399 /* CreatureLinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B2009D2F91576100E68399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B200A62F91576100E68399 /* CreatureLinkUITests.swift in Sources */,
+				55B200A82F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55B200992F91576000E68399 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55B200862F91575B00E68399 /* CreatureLink */;
+			targetProxy = 55B200982F91576000E68399 /* PBXContainerItemProxy */;
+		};
+		55B200A32F91576100E68399 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55B200862F91575B00E68399 /* CreatureLink */;
+			targetProxy = 55B200A22F91576100E68399 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		55B200A92F91576100E68399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55B200AA2F91576100E68399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55B200AC2F91576100E68399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CreatureLink/Preview Content\"";
+				DEVELOPMENT_TEAM = YJFF52U4M8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crg3.CreatureLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55B200AD2F91576100E68399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CreatureLink/Preview Content\"";
+				DEVELOPMENT_TEAM = YJFF52U4M8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crg3.CreatureLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		55B200AF2F91576100E68399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJFF52U4M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crg3.CreatureLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreatureLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CreatureLink";
+			};
+			name = Debug;
+		};
+		55B200B02F91576100E68399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJFF52U4M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crg3.CreatureLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreatureLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CreatureLink";
+			};
+			name = Release;
+		};
+		55B200B22F91576100E68399 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJFF52U4M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crg3.CreatureLinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CreatureLink;
+			};
+			name = Debug;
+		};
+		55B200B32F91576100E68399 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJFF52U4M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = crg3.CreatureLinkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CreatureLink;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55B200822F91575B00E68399 /* Build configuration list for PBXProject "CreatureLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B200A92F91576100E68399 /* Debug */,
+				55B200AA2F91576100E68399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B200AB2F91576100E68399 /* Build configuration list for PBXNativeTarget "CreatureLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B200AC2F91576100E68399 /* Debug */,
+				55B200AD2F91576100E68399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B200AE2F91576100E68399 /* Build configuration list for PBXNativeTarget "CreatureLinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B200AF2F91576100E68399 /* Debug */,
+				55B200B02F91576100E68399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B200B12F91576100E68399 /* Build configuration list for PBXNativeTarget "CreatureLinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B200B22F91576100E68399 /* Debug */,
+				55B200B32F91576100E68399 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55B2007F2F91575B00E68399 /* Project object */;
+}
