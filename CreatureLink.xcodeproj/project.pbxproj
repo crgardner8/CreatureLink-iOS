@@ -7,13 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55B15CBB2FA2F34E00AC7179 /* NoOpCreatureLiveUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B15CBA2FA2F34D00AC7179 /* NoOpCreatureLiveUpdateService.swift */; };
+		55B15CBD2FA302B900AC7179 /* ScriptedCreatureLiveUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B15CBC2FA302B900AC7179 /* ScriptedCreatureLiveUpdateService.swift */; };
+		55B15CBF2FA3030300AC7179 /* CreatureDetailLiveUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B15CBE2FA3030300AC7179 /* CreatureDetailLiveUpdateTests.swift */; };
+		55B15CF92FAD52E900AC7179 /* CreatureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B15CF82FAD52E800AC7179 /* CreatureSession.swift */; };
 		55B2008B2F91575B00E68399 /* CreatureLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */; };
-		55B2008D2F91575B00E68399 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2008C2F91575B00E68399 /* ContentView.swift */; };
+		55B2008D2F91575B00E68399 /* CreatureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2008C2F91575B00E68399 /* CreatureListView.swift */; };
 		55B2008F2F91576000E68399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B2008E2F91576000E68399 /* Assets.xcassets */; };
 		55B200922F91576000E68399 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B200912F91576000E68399 /* Preview Assets.xcassets */; };
 		55B2009C2F91576000E68399 /* CreatureLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2009B2F91576000E68399 /* CreatureLinkTests.swift */; };
 		55B200A62F91576100E68399 /* CreatureLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200A52F91576100E68399 /* CreatureLinkUITests.swift */; };
 		55B200A82F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200A72F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift */; };
+		55B200C22F9171EE00E68399 /* DiscoveryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200C12F9171EE00E68399 /* DiscoveryState.swift */; };
+		55B200C42F91729900E68399 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200C32F91729900E68399 /* Creature.swift */; };
+		55B200C62F9172D600E68399 /* CreatureListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200C52F9172D600E68399 /* CreatureListViewModel.swift */; };
+		55B200C82F9172FE00E68399 /* FakeCreatureScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200C72F9172FE00E68399 /* FakeCreatureScannerService.swift */; };
+		55B200CA2F91748200E68399 /* CreatureScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200C92F91748200E68399 /* CreatureScannerService.swift */; };
+		55B200CC2F9174CC00E68399 /* CreatureRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200CB2F9174CC00E68399 /* CreatureRowView.swift */; };
+		55B200CE2F918CCE00E68399 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200CD2F918CCE00E68399 /* AppConstants.swift */; };
+		55B200D02F91958100E68399 /* ScannerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200CF2F91958100E68399 /* ScannerConfiguration.swift */; };
+		55B200D22F9195C900E68399 /* RandomNumberProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200D12F9195C900E68399 /* RandomNumberProviding.swift */; };
+		55B200D72F91BBC500E68399 /* ScriptedCreatureScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200D62F91BBC500E68399 /* ScriptedCreatureScannerService.swift */; };
+		55B200D92F91BC0B00E68399 /* CreatureListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200D82F91BC0B00E68399 /* CreatureListViewModelTests.swift */; };
+		55B200DB2F92973400E68399 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200DA2F92973400E68399 /* ConnectionState.swift */; };
+		55B200DD2F92975200E68399 /* CreatureConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200DC2F92975200E68399 /* CreatureConnectionService.swift */; };
+		55B200DF2F92976500E68399 /* FakeCreatureConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200DE2F92976500E68399 /* FakeCreatureConnectionService.swift */; };
+		55B200E12F92987700E68399 /* CreatureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200E02F92987700E68399 /* CreatureDetailViewModel.swift */; };
+		55B200E32F92989800E68399 /* CreatureDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200E22F92989800E68399 /* CreatureDetailView.swift */; };
+		55B200E52F9298BE00E68399 /* ConnectionStatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200E42F9298BE00E68399 /* ConnectionStatusBadge.swift */; };
+		55B200E72F92ACEF00E68399 /* ScriptedCreatureConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200E62F92ACEF00E68399 /* ScriptedCreatureConnectionService.swift */; };
+		55B200E92F92AD8600E68399 /* CreatureDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B200E82F92AD8600E68399 /* CreatureDetailViewModelTests.swift */; };
+		55F3AAA42FA02997002E506C /* CreatureCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAA32FA02997002E506C /* CreatureCommand.swift */; };
+		55F3AAA62FA029CE002E506C /* CreatureCommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAA52FA029CE002E506C /* CreatureCommandService.swift */; };
+		55F3AAA82FA02A23002E506C /* FakeCreatureCommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAA72FA02A23002E506C /* FakeCreatureCommandService.swift */; };
+		55F3AAAA2FA02CBB002E506C /* CommandPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAA92FA02CBB002E506C /* CommandPickerView.swift */; };
+		55F3AAAC2FA05945002E506C /* ScriptedCreatureCommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAAB2FA05945002E506C /* ScriptedCreatureCommandService.swift */; };
+		55F3AAAE2FA0597D002E506C /* CreatureDetailCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAAD2FA0597D002E506C /* CreatureDetailCommandTests.swift */; };
+		55F3AAB02FA1A3BA002E506C /* CreatureLiveUpdateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAAF2FA1A3BA002E506C /* CreatureLiveUpdateEvent.swift */; };
+		55F3AAB22FA1A41D002E506C /* CreatureLiveUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAB12FA1A41D002E506C /* CreatureLiveUpdateService.swift */; };
+		55F3AAB42FA1A454002E506C /* FakeCreatureLiveUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3AAB32FA1A454002E506C /* FakeCreatureLiveUpdateService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55B15CBA2FA2F34D00AC7179 /* NoOpCreatureLiveUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOpCreatureLiveUpdateService.swift; sourceTree = "<group>"; };
+		55B15CBC2FA302B900AC7179 /* ScriptedCreatureLiveUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptedCreatureLiveUpdateService.swift; sourceTree = "<group>"; };
+		55B15CBE2FA3030300AC7179 /* CreatureDetailLiveUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetailLiveUpdateTests.swift; sourceTree = "<group>"; };
+		55B15CF82FAD52E800AC7179 /* CreatureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureSession.swift; sourceTree = "<group>"; };
 		55B200872F91575B00E68399 /* CreatureLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatureLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkApp.swift; sourceTree = "<group>"; };
-		55B2008C2F91575B00E68399 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55B2008C2F91575B00E68399 /* CreatureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureListView.swift; sourceTree = "<group>"; };
 		55B2008E2F91576000E68399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B200912F91576000E68399 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55B200972F91576000E68399 /* CreatureLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreatureLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +80,34 @@
 		55B200A12F91576100E68399 /* CreatureLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreatureLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B200A52F91576100E68399 /* CreatureLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkUITests.swift; sourceTree = "<group>"; };
 		55B200A72F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		55B200C12F9171EE00E68399 /* DiscoveryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryState.swift; sourceTree = "<group>"; };
+		55B200C32F91729900E68399 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		55B200C52F9172D600E68399 /* CreatureListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureListViewModel.swift; sourceTree = "<group>"; };
+		55B200C72F9172FE00E68399 /* FakeCreatureScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCreatureScannerService.swift; sourceTree = "<group>"; };
+		55B200C92F91748200E68399 /* CreatureScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureScannerService.swift; sourceTree = "<group>"; };
+		55B200CB2F9174CC00E68399 /* CreatureRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureRowView.swift; sourceTree = "<group>"; };
+		55B200CD2F918CCE00E68399 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		55B200CF2F91958100E68399 /* ScannerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerConfiguration.swift; sourceTree = "<group>"; };
+		55B200D12F9195C900E68399 /* RandomNumberProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberProviding.swift; sourceTree = "<group>"; };
+		55B200D62F91BBC500E68399 /* ScriptedCreatureScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptedCreatureScannerService.swift; sourceTree = "<group>"; };
+		55B200D82F91BC0B00E68399 /* CreatureListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureListViewModelTests.swift; sourceTree = "<group>"; };
+		55B200DA2F92973400E68399 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		55B200DC2F92975200E68399 /* CreatureConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureConnectionService.swift; sourceTree = "<group>"; };
+		55B200DE2F92976500E68399 /* FakeCreatureConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCreatureConnectionService.swift; sourceTree = "<group>"; };
+		55B200E02F92987700E68399 /* CreatureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetailViewModel.swift; sourceTree = "<group>"; };
+		55B200E22F92989800E68399 /* CreatureDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetailView.swift; sourceTree = "<group>"; };
+		55B200E42F9298BE00E68399 /* ConnectionStatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusBadge.swift; sourceTree = "<group>"; };
+		55B200E62F92ACEF00E68399 /* ScriptedCreatureConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptedCreatureConnectionService.swift; sourceTree = "<group>"; };
+		55B200E82F92AD8600E68399 /* CreatureDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetailViewModelTests.swift; sourceTree = "<group>"; };
+		55F3AAA32FA02997002E506C /* CreatureCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureCommand.swift; sourceTree = "<group>"; };
+		55F3AAA52FA029CE002E506C /* CreatureCommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureCommandService.swift; sourceTree = "<group>"; };
+		55F3AAA72FA02A23002E506C /* FakeCreatureCommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCreatureCommandService.swift; sourceTree = "<group>"; };
+		55F3AAA92FA02CBB002E506C /* CommandPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPickerView.swift; sourceTree = "<group>"; };
+		55F3AAAB2FA05945002E506C /* ScriptedCreatureCommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptedCreatureCommandService.swift; sourceTree = "<group>"; };
+		55F3AAAD2FA0597D002E506C /* CreatureDetailCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureDetailCommandTests.swift; sourceTree = "<group>"; };
+		55F3AAAF2FA1A3BA002E506C /* CreatureLiveUpdateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLiveUpdateEvent.swift; sourceTree = "<group>"; };
+		55F3AAB12FA1A41D002E506C /* CreatureLiveUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLiveUpdateService.swift; sourceTree = "<group>"; };
+		55F3AAB32FA1A454002E506C /* FakeCreatureLiveUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCreatureLiveUpdateService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +158,13 @@
 		55B200892F91575B00E68399 /* CreatureLink */ = {
 			isa = PBXGroup;
 			children = (
-				55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */,
-				55B2008C2F91575B00E68399 /* ContentView.swift */,
+				55B200C02F915C8F00E68399 /* App */,
+				55B200B42F91588600E68399 /* Presentation */,
+				55B200B52F91589D00E68399 /* ViewModels */,
+				55B200B62F9158B700E68399 /* Domain */,
+				55B200B72F9158C700E68399 /* Data */,
+				55B200B82F9158D200E68399 /* Utilities */,
+				55B200B92F9158E200E68399 /* Resources */,
 				55B2008E2F91576000E68399 /* Assets.xcassets */,
 				55B200902F91576000E68399 /* Preview Content */,
 			);
@@ -113,7 +182,12 @@
 		55B2009A2F91576000E68399 /* CreatureLinkTests */ = {
 			isa = PBXGroup;
 			children = (
+				55B200D32F91BB6000E68399 /* TestDoubles */,
 				55B2009B2F91576000E68399 /* CreatureLinkTests.swift */,
+				55B200D82F91BC0B00E68399 /* CreatureListViewModelTests.swift */,
+				55B200E82F92AD8600E68399 /* CreatureDetailViewModelTests.swift */,
+				55F3AAAD2FA0597D002E506C /* CreatureDetailCommandTests.swift */,
+				55B15CBE2FA3030300AC7179 /* CreatureDetailLiveUpdateTests.swift */,
 			);
 			path = CreatureLinkTests;
 			sourceTree = "<group>";
@@ -125,6 +199,140 @@
 				55B200A72F91576100E68399 /* CreatureLinkUITestsLaunchTests.swift */,
 			);
 			path = CreatureLinkUITests;
+			sourceTree = "<group>";
+		};
+		55B200B42F91588600E68399 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				55B200BC2F915A6E00E68399 /* Screens */,
+				55B200BD2F915A8300E68399 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		55B200B52F91589D00E68399 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				55B200C52F9172D600E68399 /* CreatureListViewModel.swift */,
+				55B200E02F92987700E68399 /* CreatureDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		55B200B62F9158B700E68399 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				55B200BA2F9159C000E68399 /* Models */,
+				55B200BB2F9159CD00E68399 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		55B200B72F9158C700E68399 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				55B200BE2F915AA700E68399 /* Services */,
+				55B200BF2F915AB300E68399 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		55B200B82F9158D200E68399 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				55B200CD2F918CCE00E68399 /* AppConstants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		55B200B92F9158E200E68399 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		55B200BA2F9159C000E68399 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55B200C32F91729900E68399 /* Creature.swift */,
+				55B200C12F9171EE00E68399 /* DiscoveryState.swift */,
+				55B200DA2F92973400E68399 /* ConnectionState.swift */,
+				55F3AAA32FA02997002E506C /* CreatureCommand.swift */,
+				55F3AAAF2FA1A3BA002E506C /* CreatureLiveUpdateEvent.swift */,
+				55B15CF82FAD52E800AC7179 /* CreatureSession.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		55B200BB2F9159CD00E68399 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		55B200BC2F915A6E00E68399 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				55B2008C2F91575B00E68399 /* CreatureListView.swift */,
+				55B200E22F92989800E68399 /* CreatureDetailView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		55B200BD2F915A8300E68399 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				55B200CB2F9174CC00E68399 /* CreatureRowView.swift */,
+				55B200E42F9298BE00E68399 /* ConnectionStatusBadge.swift */,
+				55F3AAA92FA02CBB002E506C /* CommandPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		55B200BE2F915AA700E68399 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55B200C92F91748200E68399 /* CreatureScannerService.swift */,
+				55B200C72F9172FE00E68399 /* FakeCreatureScannerService.swift */,
+				55B200DC2F92975200E68399 /* CreatureConnectionService.swift */,
+				55B200DE2F92976500E68399 /* FakeCreatureConnectionService.swift */,
+				55F3AAA52FA029CE002E506C /* CreatureCommandService.swift */,
+				55F3AAA72FA02A23002E506C /* FakeCreatureCommandService.swift */,
+				55F3AAB12FA1A41D002E506C /* CreatureLiveUpdateService.swift */,
+				55F3AAB32FA1A454002E506C /* FakeCreatureLiveUpdateService.swift */,
+				55B200CF2F91958100E68399 /* ScannerConfiguration.swift */,
+				55B200D12F9195C900E68399 /* RandomNumberProviding.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		55B200BF2F915AB300E68399 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		55B200C02F915C8F00E68399 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				55B2008A2F91575B00E68399 /* CreatureLinkApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		55B200D32F91BB6000E68399 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				55B200D62F91BBC500E68399 /* ScriptedCreatureScannerService.swift */,
+				55B200E62F92ACEF00E68399 /* ScriptedCreatureConnectionService.swift */,
+				55F3AAAB2FA05945002E506C /* ScriptedCreatureCommandService.swift */,
+				55B15CBA2FA2F34D00AC7179 /* NoOpCreatureLiveUpdateService.swift */,
+				55B15CBC2FA302B900AC7179 /* ScriptedCreatureLiveUpdateService.swift */,
+			);
+			path = TestDoubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +465,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B2008D2F91575B00E68399 /* ContentView.swift in Sources */,
+				55F3AAA42FA02997002E506C /* CreatureCommand.swift in Sources */,
+				55B200C42F91729900E68399 /* Creature.swift in Sources */,
+				55F3AAB02FA1A3BA002E506C /* CreatureLiveUpdateEvent.swift in Sources */,
+				55B200CE2F918CCE00E68399 /* AppConstants.swift in Sources */,
+				55F3AAB42FA1A454002E506C /* FakeCreatureLiveUpdateService.swift in Sources */,
+				55B200CA2F91748200E68399 /* CreatureScannerService.swift in Sources */,
+				55B15CF92FAD52E900AC7179 /* CreatureSession.swift in Sources */,
+				55B200DF2F92976500E68399 /* FakeCreatureConnectionService.swift in Sources */,
+				55B200E12F92987700E68399 /* CreatureDetailViewModel.swift in Sources */,
+				55B2008D2F91575B00E68399 /* CreatureListView.swift in Sources */,
+				55F3AAA62FA029CE002E506C /* CreatureCommandService.swift in Sources */,
+				55B200E52F9298BE00E68399 /* ConnectionStatusBadge.swift in Sources */,
+				55B200C82F9172FE00E68399 /* FakeCreatureScannerService.swift in Sources */,
+				55B200DB2F92973400E68399 /* ConnectionState.swift in Sources */,
+				55B200DD2F92975200E68399 /* CreatureConnectionService.swift in Sources */,
+				55B200C62F9172D600E68399 /* CreatureListViewModel.swift in Sources */,
+				55F3AAB22FA1A41D002E506C /* CreatureLiveUpdateService.swift in Sources */,
+				55F3AAAA2FA02CBB002E506C /* CommandPickerView.swift in Sources */,
 				55B2008B2F91575B00E68399 /* CreatureLinkApp.swift in Sources */,
+				55F3AAA82FA02A23002E506C /* FakeCreatureCommandService.swift in Sources */,
+				55B200CC2F9174CC00E68399 /* CreatureRowView.swift in Sources */,
+				55B200E32F92989800E68399 /* CreatureDetailView.swift in Sources */,
+				55B200D22F9195C900E68399 /* RandomNumberProviding.swift in Sources */,
+				55B200C22F9171EE00E68399 /* DiscoveryState.swift in Sources */,
+				55B200D02F91958100E68399 /* ScannerConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +497,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B15CBF2FA3030300AC7179 /* CreatureDetailLiveUpdateTests.swift in Sources */,
+				55B200E92F92AD8600E68399 /* CreatureDetailViewModelTests.swift in Sources */,
+				55B15CBB2FA2F34E00AC7179 /* NoOpCreatureLiveUpdateService.swift in Sources */,
+				55B200E72F92ACEF00E68399 /* ScriptedCreatureConnectionService.swift in Sources */,
 				55B2009C2F91576000E68399 /* CreatureLinkTests.swift in Sources */,
+				55B200D92F91BC0B00E68399 /* CreatureListViewModelTests.swift in Sources */,
+				55F3AAAC2FA05945002E506C /* ScriptedCreatureCommandService.swift in Sources */,
+				55B200D72F91BBC500E68399 /* ScriptedCreatureScannerService.swift in Sources */,
+				55F3AAAE2FA0597D002E506C /* CreatureDetailCommandTests.swift in Sources */,
+				55B15CBD2FA302B900AC7179 /* ScriptedCreatureLiveUpdateService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
