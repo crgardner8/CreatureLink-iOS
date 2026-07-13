@@ -28,6 +28,8 @@ final class CreatureDetailViewModel: ObservableObject {
     
     private var liveUpdateTask: Task<Void, Never>?
     
+    private var commandTask: Task<Void, Never>?
+    
     private var isCommandInFlight: Bool {
         isSendingCommand
     }
@@ -49,8 +51,9 @@ final class CreatureDetailViewModel: ObservableObject {
     }
     
     deinit {
-        liveUpdateTask?.cancel()
         connectionTask?.cancel()
+        commandTask?.cancel()
+        liveUpdateTask?.cancel()
     }
     
     func connectTapped() {
@@ -97,47 +100,55 @@ final class CreatureDetailViewModel: ObservableObject {
     
     func sendSelectedCommandTapped() {
         guard case .connected = session.connectionState else { return }
-        guard !isSendingCommand else { return }
-        
+        guard commandTask == nil else { return }
+
+        let command = selectedCommand
         isSendingCommand = true
-        
-        Task {
+
+        commandTask = Task {
+            defer {
+                isSendingCommand = false
+                commandTask = nil
+            }
+
             do {
                 let updatedCreature = try await commandService.send(
-                    command: selectedCommand,
+                    command: command,
                     to: session.creature
                 )
-                
-                if Task.isCancelled { return }
-                
+
+                if Task.isCancelled {
+                    return
+                }
+
                 applyCreatureUpdate(updatedCreature)
             } catch {
-                if Task.isCancelled { return }
-                
+                if Task.isCancelled {
+                    return
+                }
+
                 commandErrorMessage = error.localizedDescription
                 shouldShowCommandErrorAlert = true
             }
-            
-            isSendingCommand = false
         }
     }
     
     func disconnectTapped() {
         guard connectionTask == nil else { return }
+        guard commandTask == nil else { return }
         guard case .connected = session.connectionState else { return }
-        
+
         connectionTask = Task {
             await connectionService.disconnect(from: session.creature)
-            
+
             if Task.isCancelled {
                 connectionTask = nil
                 return
             }
-            
+
             session.creature.isConnected = false
             stopLiveUpdates()
             session.connectionState = .disconnected
-            stopLiveUpdates()
             connectionTask = nil
         }
     }
