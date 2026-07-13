@@ -26,7 +26,7 @@ final class CreatureSession: ObservableObject, Identifiable {
     }
 }
 
-extension CreatureSession: Hashable {
+extension CreatureSession {
     static func == (lhs: CreatureSession, rhs: CreatureSession) -> Bool {
         lhs.id == rhs.id
     }
