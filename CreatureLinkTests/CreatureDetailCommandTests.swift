@@ -83,8 +83,8 @@ final class CreatureDetailCommandTests: XCTestCase {
         testCreatureDetailViewModel.sendSelectedCommandTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.creature.energy, 70)
-        XCTAssertEqual(testCreatureDetailViewModel.creature.mood, .happy)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.energy, 70)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.mood, .happy)
         XCTAssertFalse(testCreatureDetailViewModel.isSendingCommand)
         XCTAssertFalse(testCreatureDetailViewModel.shouldShowCommandErrorAlert)
     }
@@ -150,7 +150,7 @@ private extension CreatureDetailCommandTests {
         liveUpdateService: CreatureLiveUpdateService = NoOpCreatureLiveUpdateService()
     ) -> CreatureDetailViewModel {
         CreatureDetailViewModel(
-            creature: creature,
+            session: CreatureSession(creature: creature),
             connectionService: ScriptedCreatureConnectionService(
                 behavior: .connectSucceeds
             ),
@@ -179,7 +179,7 @@ private extension CreatureDetailCommandTests {
     func connect(_ viewModel: CreatureDetailViewModel) async {
         viewModel.connectTapped()
         await waitForProcessing()
-        XCTAssertEqual(viewModel.connectionState, .connected)
+        XCTAssertEqual(viewModel.session.connectionState, .connected)
     }
     
     func waitForProcessing() async {

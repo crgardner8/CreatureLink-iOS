@@ -38,13 +38,13 @@ final class CreatureDetailLiveUpdateTests: XCTestCase {
         testCreatureDetailViewModel.connectTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .connected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .connected)
         
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.creature.energy, 72)
-        XCTAssertEqual(testCreatureDetailViewModel.creature.mood, .sleepy)
-        XCTAssertEqual(testCreatureDetailViewModel.creature.signalStrength, 65)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.energy, 72)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.mood, .sleepy)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.signalStrength, 65)
     }
     
     func test_liveUpdateDisconnected_setsFailedStateAndShowsAlert() async {
@@ -64,10 +64,10 @@ final class CreatureDetailLiveUpdateTests: XCTestCase {
         await waitForProcessing()
         
         XCTAssertEqual(
-            testCreatureDetailViewModel.connectionState,
+            testCreatureDetailViewModel.session.connectionState,
             .failed("Live connection dropped.")
         )
-        XCTAssertFalse(testCreatureDetailViewModel.creature.isConnected)
+        XCTAssertFalse(testCreatureDetailViewModel.session.creature.isConnected)
         XCTAssertTrue(testCreatureDetailViewModel.shouldShowErrorAlert)
     }
     
@@ -117,8 +117,8 @@ final class CreatureDetailLiveUpdateTests: XCTestCase {
         
         await waitForLongerProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.creature.energy, 95)
-        XCTAssertEqual(testCreatureDetailViewModel.creature.mood, .excited)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.energy, 95)
+        XCTAssertEqual(testCreatureDetailViewModel.session.creature.mood, .excited)
         XCTAssertEqual(commandService.sendCallCount, 1)
     }
 }
@@ -131,7 +131,7 @@ private extension CreatureDetailLiveUpdateTests {
         liveUpdateService: CreatureLiveUpdateService
     ) -> CreatureDetailViewModel {
         CreatureDetailViewModel(
-            creature: creature,
+            session: CreatureSession(creature: creature),
             connectionService: ScriptedCreatureConnectionService(
                 behavior: .connectSucceeds
             ),
