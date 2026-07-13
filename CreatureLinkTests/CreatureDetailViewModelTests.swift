@@ -20,8 +20,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
             connectionService: connectionService
         )
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .disconnected)
-        XCTAssertFalse(testCreatureDetailViewModel.creature.isConnected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .disconnected)
+        XCTAssertFalse(testCreatureDetailViewModel.session.creature.isConnected)
         XCTAssertFalse(testCreatureDetailViewModel.shouldShowErrorAlert)
     }
     
@@ -34,7 +34,7 @@ final class CreatureDetailViewModelTests: XCTestCase {
             connectionService: connectionService
         )
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .unavailable)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .unavailable)
     }
     
     func test_connectTapped_setsConnectedState_whenConnectionSucceeds() async {
@@ -49,8 +49,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         testCreatureDetailViewModel.connectTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .connected)
-        XCTAssertTrue(testCreatureDetailViewModel.creature.isConnected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .connected)
+        XCTAssertTrue(testCreatureDetailViewModel.session.creature.isConnected)
         XCTAssertEqual(connectionService.connectCallCount, 1)
         XCTAssertFalse(testCreatureDetailViewModel.shouldShowErrorAlert)
     }
@@ -70,10 +70,10 @@ final class CreatureDetailViewModelTests: XCTestCase {
         await waitForProcessing()
         
         XCTAssertEqual(
-            testCreatureDetailViewModel.connectionState,
+            testCreatureDetailViewModel.session.connectionState,
             .failed(TestConnectionError.handshakeFailed.localizedDescription)
         )
-        XCTAssertFalse(testCreatureDetailViewModel.creature.isConnected)
+        XCTAssertFalse(testCreatureDetailViewModel.session.creature.isConnected)
         XCTAssertTrue(testCreatureDetailViewModel.shouldShowErrorAlert)
         XCTAssertEqual(connectionService.connectCallCount, 1)
     }
@@ -90,13 +90,13 @@ final class CreatureDetailViewModelTests: XCTestCase {
         testCreatureDetailViewModel.connectTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .connected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .connected)
         
         testCreatureDetailViewModel.disconnectTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .disconnected)
-        XCTAssertFalse(testCreatureDetailViewModel.creature.isConnected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .disconnected)
+        XCTAssertFalse(testCreatureDetailViewModel.session.creature.isConnected)
         XCTAssertEqual(connectionService.disconnectCallCount, 1)
     }
     
@@ -112,7 +112,7 @@ final class CreatureDetailViewModelTests: XCTestCase {
         testCreatureDetailViewModel.disconnectTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .disconnected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .disconnected)
         XCTAssertEqual(connectionService.disconnectCallCount, 0)
     }
     
@@ -125,12 +125,12 @@ final class CreatureDetailViewModelTests: XCTestCase {
             connectionService: connectionService
         )
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .unavailable)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .unavailable)
         
         testCreatureDetailViewModel.connectTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .unavailable)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .unavailable)
         XCTAssertEqual(connectionService.connectCallCount, 0)
     }
     
@@ -153,7 +153,7 @@ final class CreatureDetailViewModelTests: XCTestCase {
         testCreatureDetailViewModel.dismissErrorAlert()
         
         XCTAssertFalse(testCreatureDetailViewModel.shouldShowErrorAlert)
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .disconnected)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .disconnected)
     }
     
     func test_dismissErrorAlert_resetsToUnavailable_forUnknownSignalCategory() async {
@@ -167,13 +167,13 @@ final class CreatureDetailViewModelTests: XCTestCase {
             connectionService: connectionService
         )
         
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .unavailable)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .unavailable)
         
         testCreatureDetailViewModel.shouldShowErrorAlert = true
         testCreatureDetailViewModel.dismissErrorAlert()
         
         XCTAssertFalse(testCreatureDetailViewModel.shouldShowErrorAlert)
-        XCTAssertEqual(testCreatureDetailViewModel.connectionState, .unavailable)
+        XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .unavailable)
     }
     
     func test_connectTapped_doesNotStartSecondConnection_whenTaskAlreadyInFlight() async {
@@ -220,7 +220,7 @@ private extension CreatureDetailViewModelTests {
         liveUpdateService: CreatureLiveUpdateService = NoOpCreatureLiveUpdateService()
     ) -> CreatureDetailViewModel {
         CreatureDetailViewModel(
-            creature: creature,
+            session: CreatureSession(creature: creature),
             connectionService: connectionService,
             commandService: commandService ?? ScriptedCreatureCommandService(
                 behavior: .succeeds(creature)
