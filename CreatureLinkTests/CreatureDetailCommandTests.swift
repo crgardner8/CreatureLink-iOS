@@ -91,22 +91,25 @@ final class CreatureDetailCommandTests: XCTestCase {
     
     func test_sendSelectedCommand_showsErrorAlert_whenCommandFails() async {
         let connectedCreature = makeCreature(isConnected: true)
-        
+
         let commandService = ScriptedCreatureCommandService(
             behavior: .fails(TestCommandError.commandRejected)
         )
-        
+
         let testCreatureDetailViewModel = makeViewModel(
             creature: connectedCreature,
             commandService: commandService
         )
-        
+
         await connect(testCreatureDetailViewModel)
-        
+
         testCreatureDetailViewModel.selectedCommand = .play
         testCreatureDetailViewModel.sendSelectedCommandTapped()
-        await waitForProcessing()
-        
+
+        await waitUntil {
+            !testCreatureDetailViewModel.isSendingCommand
+        }
+
         XCTAssertEqual(commandService.sendCallCount, 1)
         XCTAssertEqual(commandService.lastCommand, .play)
         XCTAssertTrue(testCreatureDetailViewModel.shouldShowCommandErrorAlert)
@@ -184,6 +187,27 @@ private extension CreatureDetailCommandTests {
     
     func waitForProcessing() async {
         try? await Task.sleep(nanoseconds: 75_000_000)
+    }
+    
+    func waitUntil(
+        timeoutNanoseconds: UInt64 = 1_000_000_000,
+        condition: @escaping @MainActor () -> Bool
+    ) async {
+        let pollingIntervalNanoseconds: UInt64 = 10_000_000
+        var elapsedNanoseconds: UInt64 = 0
+
+        while !condition() && elapsedNanoseconds < timeoutNanoseconds {
+            try? await Task.sleep(
+                nanoseconds: pollingIntervalNanoseconds
+            )
+
+            elapsedNanoseconds += pollingIntervalNanoseconds
+        }
+
+        XCTAssertTrue(
+            condition(),
+            "Timed out waiting for asynchronous condition."
+        )
     }
 }
 
