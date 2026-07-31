@@ -25,7 +25,8 @@ final class CreatureDetailCommandTests: XCTestCase {
         testCreatureDetailViewModel.sendSelectedCommandTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(commandService.sendCallCount, 0)
+        let sendCallCount = await commandService.sendCallCount
+        XCTAssertEqual(sendCallCount, 0)
     }
     
     func test_sendSelectedCommand_sendsSelectedCommand_whenConnected() async {
@@ -51,8 +52,10 @@ final class CreatureDetailCommandTests: XCTestCase {
         testCreatureDetailViewModel.sendSelectedCommandTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(commandService.sendCallCount, 1)
-        XCTAssertEqual(commandService.lastCommand, .feed)
+        let sendCallCount = await commandService.sendCallCount
+        let lastCommand = await commandService.lastCommand
+        XCTAssertEqual(sendCallCount, 1)
+        XCTAssertEqual(lastCommand, .feed)
     }
     
     func test_sendSelectedCommand_updatesCreature_whenCommandSucceeds() async {
@@ -91,24 +94,29 @@ final class CreatureDetailCommandTests: XCTestCase {
     
     func test_sendSelectedCommand_showsErrorAlert_whenCommandFails() async {
         let connectedCreature = makeCreature(isConnected: true)
-        
+
         let commandService = ScriptedCreatureCommandService(
             behavior: .fails(TestCommandError.commandRejected)
         )
-        
+
         let testCreatureDetailViewModel = makeViewModel(
             creature: connectedCreature,
             commandService: commandService
         )
-        
+
         await connect(testCreatureDetailViewModel)
-        
+
         testCreatureDetailViewModel.selectedCommand = .play
         testCreatureDetailViewModel.sendSelectedCommandTapped()
-        await waitForProcessing()
-        
-        XCTAssertEqual(commandService.sendCallCount, 1)
-        XCTAssertEqual(commandService.lastCommand, .play)
+
+        await waitUntil {
+            !testCreatureDetailViewModel.isSendingCommand
+        }
+
+        let sendCallCount = await commandService.sendCallCount
+        let lastCommand = await commandService.lastCommand
+        XCTAssertEqual(sendCallCount, 1)
+        XCTAssertEqual(lastCommand, .play)
         XCTAssertTrue(testCreatureDetailViewModel.shouldShowCommandErrorAlert)
         XCTAssertEqual(
             testCreatureDetailViewModel.commandErrorMessage,
@@ -138,7 +146,8 @@ final class CreatureDetailCommandTests: XCTestCase {
         
         await waitForProcessing()
         
-        XCTAssertEqual(commandService.sendCallCount, 1)
+        let sendCallCount = await commandService.sendCallCount
+        XCTAssertEqual(sendCallCount, 1)
     }
 }
 
@@ -184,6 +193,27 @@ private extension CreatureDetailCommandTests {
     
     func waitForProcessing() async {
         try? await Task.sleep(nanoseconds: 75_000_000)
+    }
+    
+    func waitUntil(
+        timeoutNanoseconds: UInt64 = 1_000_000_000,
+        condition: @escaping @MainActor () -> Bool
+    ) async {
+        let pollingIntervalNanoseconds: UInt64 = 10_000_000
+        var elapsedNanoseconds: UInt64 = 0
+
+        while !condition() && elapsedNanoseconds < timeoutNanoseconds {
+            try? await Task.sleep(
+                nanoseconds: pollingIntervalNanoseconds
+            )
+
+            elapsedNanoseconds += pollingIntervalNanoseconds
+        }
+
+        XCTAssertTrue(
+            condition(),
+            "Timed out waiting for asynchronous condition."
+        )
     }
 }
 

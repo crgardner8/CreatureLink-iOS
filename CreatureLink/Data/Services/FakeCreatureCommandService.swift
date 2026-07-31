@@ -24,7 +24,7 @@ enum CreatureCommandError: LocalizedError {
     }
 }
 
-final class FakeCreatureCommandService: CreatureCommandService {
+final class FakeCreatureCommandService: CreatureCommandService, Sendable {
     
     func send(
         command: CreatureCommand,

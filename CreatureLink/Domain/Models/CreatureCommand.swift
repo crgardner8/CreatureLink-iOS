@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CreatureCommand: String, CaseIterable, Identifiable {
+enum CreatureCommand: String, CaseIterable, Identifiable, Sendable {
     case feed
     case play
     case rest

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Creature: Identifiable, Equatable {
+struct Creature: Identifiable, Equatable, Sendable {
     let id: UUID
     let name: String
     let type: CreatureType
@@ -26,17 +26,16 @@ struct Creature: Identifiable, Equatable {
     }
 }
 
-enum CreatureType: String, CaseIterable {
+enum CreatureType: String, CaseIterable, Sendable {
     case fire
     case water
     case electric
     case earth
 }
 
-enum Mood: String, CaseIterable {
+enum Mood: String, CaseIterable, Sendable {
     case happy
     case sleepy
     case excited
     case bored
 }
-
