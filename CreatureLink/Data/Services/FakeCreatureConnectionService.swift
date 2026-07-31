@@ -24,7 +24,7 @@ enum ConnectionError: LocalizedError {
     }
 }
 
-final class FakeCreatureConnectionService: CreatureConnectionService {
+final class FakeCreatureConnectionService: CreatureConnectionService, Sendable {
     func connect(to creature: Creature) async throws {
         try await Task.sleep(nanoseconds: 1_200_000_000)
         

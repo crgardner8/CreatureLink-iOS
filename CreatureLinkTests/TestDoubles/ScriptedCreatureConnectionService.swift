@@ -8,8 +8,8 @@
 import Foundation
 @testable import CreatureLink
 
-final class ScriptedCreatureConnectionService: CreatureConnectionService {
-    enum Behavior {
+actor ScriptedCreatureConnectionService: CreatureConnectionService {
+    enum Behavior: Sendable {
         case connectSucceeds
         case connectFails(Error)
     }

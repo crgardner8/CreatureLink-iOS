@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CreatureCommandService {
+protocol CreatureCommandService: Sendable {
     func send(
         command: CreatureCommand,
         to creature: Creature
