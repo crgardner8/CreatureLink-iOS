@@ -25,7 +25,8 @@ final class CreatureDetailCommandTests: XCTestCase {
         testCreatureDetailViewModel.sendSelectedCommandTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(commandService.sendCallCount, 0)
+        let sendCallCount = await commandService.sendCallCount
+        XCTAssertEqual(sendCallCount, 0)
     }
     
     func test_sendSelectedCommand_sendsSelectedCommand_whenConnected() async {
@@ -51,8 +52,10 @@ final class CreatureDetailCommandTests: XCTestCase {
         testCreatureDetailViewModel.sendSelectedCommandTapped()
         await waitForProcessing()
         
-        XCTAssertEqual(commandService.sendCallCount, 1)
-        XCTAssertEqual(commandService.lastCommand, .feed)
+        let sendCallCount = await commandService.sendCallCount
+        let lastCommand = await commandService.lastCommand
+        XCTAssertEqual(sendCallCount, 1)
+        XCTAssertEqual(lastCommand, .feed)
     }
     
     func test_sendSelectedCommand_updatesCreature_whenCommandSucceeds() async {
@@ -110,8 +113,10 @@ final class CreatureDetailCommandTests: XCTestCase {
             !testCreatureDetailViewModel.isSendingCommand
         }
 
-        XCTAssertEqual(commandService.sendCallCount, 1)
-        XCTAssertEqual(commandService.lastCommand, .play)
+        let sendCallCount = await commandService.sendCallCount
+        let lastCommand = await commandService.lastCommand
+        XCTAssertEqual(sendCallCount, 1)
+        XCTAssertEqual(lastCommand, .play)
         XCTAssertTrue(testCreatureDetailViewModel.shouldShowCommandErrorAlert)
         XCTAssertEqual(
             testCreatureDetailViewModel.commandErrorMessage,
@@ -141,7 +146,8 @@ final class CreatureDetailCommandTests: XCTestCase {
         
         await waitForProcessing()
         
-        XCTAssertEqual(commandService.sendCallCount, 1)
+        let sendCallCount = await commandService.sendCallCount
+        XCTAssertEqual(sendCallCount, 1)
     }
 }
 

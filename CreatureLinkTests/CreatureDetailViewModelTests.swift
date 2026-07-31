@@ -51,7 +51,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         
         XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .connected)
         XCTAssertTrue(testCreatureDetailViewModel.session.creature.isConnected)
-        XCTAssertEqual(connectionService.connectCallCount, 1)
+        let connectCallCount = await connectionService.connectCallCount
+        XCTAssertEqual(connectCallCount, 1)
         XCTAssertFalse(testCreatureDetailViewModel.shouldShowErrorAlert)
     }
     
@@ -75,7 +76,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         )
         XCTAssertFalse(testCreatureDetailViewModel.session.creature.isConnected)
         XCTAssertTrue(testCreatureDetailViewModel.shouldShowErrorAlert)
-        XCTAssertEqual(connectionService.connectCallCount, 1)
+        let connectCallCount = await connectionService.connectCallCount
+        XCTAssertEqual(connectCallCount, 1)
     }
     
     func test_disconnectTapped_setsDisconnectedState_whenCurrentlyConnected() async {
@@ -97,7 +99,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         
         XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .disconnected)
         XCTAssertFalse(testCreatureDetailViewModel.session.creature.isConnected)
-        XCTAssertEqual(connectionService.disconnectCallCount, 1)
+        let disconnectCallCount = await connectionService.disconnectCallCount
+        XCTAssertEqual(disconnectCallCount, 1)
     }
     
     func test_disconnectTapped_doesNothing_whenNotConnected() async {
@@ -113,7 +116,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         await waitForProcessing()
         
         XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .disconnected)
-        XCTAssertEqual(connectionService.disconnectCallCount, 0)
+        let disconnectCallCount = await connectionService.disconnectCallCount
+        XCTAssertEqual(disconnectCallCount, 0)
     }
     
     func test_connectTapped_doesNothing_whenStateIsUnavailable() async {
@@ -131,7 +135,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         await waitForProcessing()
         
         XCTAssertEqual(testCreatureDetailViewModel.session.connectionState, .unavailable)
-        XCTAssertEqual(connectionService.connectCallCount, 0)
+        let connectCallCount = await connectionService.connectCallCount
+        XCTAssertEqual(connectCallCount, 0)
     }
     
     func test_dismissErrorAlert_resetsFailedStateToDisconnected_forValidSignalCategory() async {
@@ -193,7 +198,8 @@ final class CreatureDetailViewModelTests: XCTestCase {
         
         await waitForProcessing()
         
-        XCTAssertEqual(connectionService.connectCallCount, 1)
+        let connectCallCount = await connectionService.connectCallCount
+        XCTAssertEqual(connectCallCount, 1)
     }
 }
 

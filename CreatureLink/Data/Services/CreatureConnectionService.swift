@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CreatureConnectionService {
+protocol CreatureConnectionService: Sendable {
     func connect(to creature: Creature) async throws
     func disconnect(from creature: Creature) async
 }

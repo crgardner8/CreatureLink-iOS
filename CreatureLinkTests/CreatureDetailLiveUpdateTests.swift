@@ -119,7 +119,8 @@ final class CreatureDetailLiveUpdateTests: XCTestCase {
         
         XCTAssertEqual(testCreatureDetailViewModel.session.creature.energy, 95)
         XCTAssertEqual(testCreatureDetailViewModel.session.creature.mood, .excited)
-        XCTAssertEqual(commandService.sendCallCount, 1)
+        let sendCallCount = await commandService.sendCallCount
+        XCTAssertEqual(sendCallCount, 1)
     }
 }
 

@@ -19,14 +19,17 @@ final class ScriptedCreatureScannerService: CreatureScannerService {
     
     func scan() -> AsyncStream<ScanEvent> {
         AsyncStream { continuation in
+            let eventsSnapshot = events
+            let delaySnapshot = delayNanoseconds
+            
             let task = Task {
-                for event in events {
+                for event in eventsSnapshot {
                     if Task.isCancelled {
                         continuation.finish()
                         return
                     }
                     
-                    try? await Task.sleep(nanoseconds: delayNanoseconds)
+                    try? await Task.sleep(nanoseconds: delaySnapshot)
                     
                     if Task.isCancelled {
                         continuation.finish()
