@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol RandomNumberProviding {
+protocol RandomNumberProviding: Sendable {
     func int(in range: ClosedRange<Int>) -> Int
     func int(in range: Range<Int>) -> Int
 }
 
-struct SystemRandomNumberProvider: RandomNumberProviding {
+struct SystemRandomNumberProvider: RandomNumberProviding, Sendable {
     func int(in range: ClosedRange<Int>) -> Int {
         Int.random(in: range)
     }

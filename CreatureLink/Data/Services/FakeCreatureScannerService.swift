@@ -22,14 +22,17 @@ final class FakeCreatureScannerService: CreatureScannerService {
     
     func scan() -> AsyncStream<ScanEvent> {
         AsyncStream { continuation in
+            let configurationSnapshot = configuration
+            let randomizerSnapshot = randomizer
+            
             let task = Task {
                 var activeCreatures: [Creature] = []
                 let possibleCreatures = Self.sampleCreatures()
                 
-                for _ in 1...configuration.scanIterations {
+                for _ in 1...configurationSnapshot.scanIterations {
                     let delay = UInt64(
-                        randomizer.int(
-                            in: Int(configuration.minimumDelayNanoseconds)...Int(configuration.maximumDelayNanoseconds)
+                        randomizerSnapshot.int(
+                            in: Int(configurationSnapshot.minimumDelayNanoseconds)...Int(configurationSnapshot.maximumDelayNanoseconds)
                         )
                     )
                     
@@ -40,20 +43,20 @@ final class FakeCreatureScannerService: CreatureScannerService {
                         return
                     }
                     
-                    let roll = randomizer.int(in: 1...100)
+                    let roll = randomizerSnapshot.int(in: 1...100)
                     
                     switch roll {
                     case 1...55:
-                        if let candidate = randomizer.element(from: possibleCreatures) {
+                        if let candidate = randomizerSnapshot.element(from: possibleCreatures) {
                             if let existingIndex = activeCreatures.firstIndex(where: { $0.id == candidate.id }) {
                                 var updated = activeCreatures[existingIndex]
-                                updated.signalStrength = randomizer.int(in: 20...100)
-                                updated.mood = randomizer.element(from: Mood.allCases) ?? updated.mood
+                                updated.signalStrength = randomizerSnapshot.int(in: 20...100)
+                                updated.mood = randomizerSnapshot.element(from: Mood.allCases) ?? updated.mood
                                 activeCreatures[existingIndex] = updated
                                 continuation.yield(.updated(updated))
                             } else {
                                 var discovered = candidate
-                                discovered.signalStrength = randomizer.int(in: 30...100)
+                                discovered.signalStrength = randomizerSnapshot.int(in: 30...100)
                                 activeCreatures.append(discovered)
                                 continuation.yield(.discovered(discovered))
                             }
@@ -61,12 +64,12 @@ final class FakeCreatureScannerService: CreatureScannerService {
                         
                     case 56...75:
                         if !activeCreatures.isEmpty {
-                            let index = randomizer.int(in: 0..<activeCreatures.count)
+                            let index = randomizerSnapshot.int(in: 0..<activeCreatures.count)
                             let lostCreature = activeCreatures.remove(at: index)
                             continuation.yield(.lost(lostCreature.id))
                         }
                         
-                    case 76...(100 - configuration.scanFailureRatePercent):
+                    case 76...(100 - configurationSnapshot.scanFailureRatePercent):
                         continue
                         
                     default:

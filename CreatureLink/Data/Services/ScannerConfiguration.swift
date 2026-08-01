@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScannerConfiguration: Equatable {
+struct ScannerConfiguration: Equatable, Sendable {
     let scanIterations: Int
     let minimumDelayNanoseconds: UInt64
     let maximumDelayNanoseconds: UInt64
