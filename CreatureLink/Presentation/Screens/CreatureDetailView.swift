@@ -209,7 +209,7 @@ struct CreatureDetailView: View {
 
 struct CreatureDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             CreatureDetailView(
                 viewModel: CreatureDetailViewModel(
                     session: CreatureSession(
